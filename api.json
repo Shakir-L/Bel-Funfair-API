@@ -1,0 +1,6 @@
+{"users": [
+  {"id": "1","role": "organisateur","password":"1"},
+  {"id": "2","role": "organisateur","password":"2"},
+  {"id": "3","role": "prestataire","password":"3"},
+  {"id": "4","role": "prestataire","password":"4"}
+]}
