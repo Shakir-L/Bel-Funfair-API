@@ -1,0 +1,65 @@
+<div class="text-center mt-4">
+    <div class="w-75 mt-4 bg-dark rounded" style="margin-left: 12.5%;">
+        {{#ifEquals role "organisateur"}}
+            <h4 class="p-2 text-light">Organizer Menu </h4>
+            <div class="container">
+                <div class="row">
+                    <div class="card m-3" style="width: 30%">
+                        <img class="card-img-top rounded mt-2 h-50" src="https://s.yimg.com/ny/api/res/1.2/sG6Px5qYoNpK0CxmlmrEyg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2021-08/ab8c13d0-01c2-11ec-b5ff-8b075554c8b4">
+                        <div class="card-body">
+                            <h5 class="card-title">Fairgrounds and stands</h5>
+                            <p class="card-text">management of fairgrounds and stands</p>
+                            <a href="/organisateurs/manege" class="btn btn-dark">manage</a>
+                        </div>
+                    </div>
+                    <div class="card m-3" style="width: 30%">
+                        <img class="card-img-top rounded mt-2 h-50" src="https://www.ulmaconstruction.fr/fr-fr/echafaudages/evenemets/equipement-scenique/scene-couverte/@@images/e5aa3766-6614-469e-8a5a-515fa86180fc.jpeg">
+                        <div class="card-body">
+                            <h5 class="card-title">Stage</h5>
+                            <p class="card-text">stage planning management</p>
+                            <a href="/organisateurs/artist" class="btn btn-dark">manage</a>
+                        </div>
+                    </div>
+                    <div class="card m-3" style="width: 30%">
+                        <img class="card-img-top rounded mt-2 h-50" src="https://www.protectioncivile-paris8.org/wp-content/uploads/2020/12/DPS-Protection-Civile-Tour-de-France.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Lifeguard and security</h5>
+                            <p class="card-text">lifeguard and security management</p>
+                            <a href="/organisateurs/security" class="btn btn-dark">manage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <h4 class="p-2 text-light">Service Provider Menu</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="card m-3" style="width: 30%">
+                        <img class="card-img-top rounded mt-2 h-50" src="https://s.yimg.com/ny/api/res/1.2/sG6Px5qYoNpK0CxmlmrEyg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2021-08/ab8c13d0-01c2-11ec-b5ff-8b075554c8b4">
+                        <div class="card-body">
+                            <h5 class="card-title">Fairground account</h5>
+                            <p class="card-text">space to manage my rides</p>
+                            <a href="/prestataires/manege" class="btn btn-dark">manage</a>
+                        </div>
+                    </div>
+                    <div class="card m-3" style="width: 30%">
+                        <img class="card-img-top rounded mt-2 h-50" src="https://lh5.googleusercontent.com/p/AF1QipOJSR9WXQd8S1QZLrXri3Hnu1BjMt9h7JsvOmsi=w408-h306-k-no">
+                        <div class="card-body">
+                            <h5 class="card-title">Restorer account</h5>
+                            <p class="card-text">space to manage my restaurants and stands</p>
+                            <a href="/prestataires/stand" class="btn btn-dark">manage</a>
+                        </div>
+                    </div>
+                    <div class="card m-3" style="width: 30%">
+                        <img class="card-img-top rounded mt-2 h-50" src="https://www.ulmaconstruction.fr/fr-fr/echafaudages/evenemets/equipement-scenique/scene-couverte/@@images/e5aa3766-6614-469e-8a5a-515fa86180fc.jpeg">
+                        <div class="card-body">
+                            <h5 class="card-title">Artist account</h5>
+                            <p class="card-text">space to manage my shows</p>
+                            <a href="/prestataires/artist" class="btn btn-dark">manage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/ifEquals}}
+    </div>
+</div>

@@ -2,7 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import {engine} from "express-handlebars";
+import {engine as hbengine} from "express-handlebars";
+import getHelpers from "./helpers/handlebars.js"
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import dotenv from "dotenv";
@@ -13,11 +14,19 @@ const __dirname = dirname(__filename);
 const port = process.env.PORT;
 const app = express();
 
+import expressSession from "express-session";
+import cookieParser from "cookie-parser";
+import connectFlash from "connect-flash"
 
-import {default as AdminRouter} from "./routes/admin.router.js";
+import {default as UsersRouter} from "./routes/users.router.js";
+import {default as PrestatairesRouter} from "./routes/prestataires.router.js";
+import {default as OrganisateursRouter} from "./routes/organisateurs.router.js";
 
-
-app.engine("handlebars",engine());
+app.engine("handlebars", hbengine({
+    defaultLayout: 'main',
+    extname: '.handlebars',
+    helpers: getHelpers
+}));
 app.set("view engine","handlebars");
 app.set("views","./views");
 
@@ -42,7 +51,27 @@ const swaggerDocs = swaggerJsdoc(swaggerOption);
 
 app.use("/api-docs",swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-app.use("/", AdminRouter);
+app.use(cookieParser("secret_password"));
+const unJour = 1000 * 60 * 6 * 24; //millisecondes
+app.use(
+    expressSession({
+        secret:"secret_password",
+        cookie:{
+            maxAge: unJour
+        },
+        resave: false,
+        saveUninitialized: false
+    })
+);
+app.use(connectFlash());
+app.use((req,res,next)=>{
+    res.locals.flashMessages = req.flash();
+    next();
+});
+
+app.use("/users", UsersRouter);
+app.use("/prestataires", PrestatairesRouter);
+app.use("/organisateurs", OrganisateursRouter);
 app.get("/",(req,res)=>{
     res.render("layouts/home.handlebars")
 });

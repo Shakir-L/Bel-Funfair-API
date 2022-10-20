@@ -1,6 +1,32 @@
-{"users": [
-  {"id": "1","role": "organisateur","password":"1"},
-  {"id": "2","role": "organisateur","password":"2"},
-  {"id": "3","role": "prestataire","password":"3"},
-  {"id": "4","role": "prestataire","password":"4"}
-]}
+{"data": {
+  "users": [
+    {
+      "id": "1",
+      "role": "organisateur",
+      "firstname": "orga1",
+      "surname": "orga1",
+      "password": "$2b$10$94kO1uWdRJrMNCozXZII7OE38Yxd7oQFsA.10iq.gZOg35FEzralO"
+    },
+    {
+      "id": "2",
+      "role": "organisateur",
+      "firstname": "orga2",
+      "surname": "orga2",
+      "password": "$2b$10$IAZ6pccUb..oKrKxh8iLVeJMS0JPu9YWIfUlNQl3T5rYPINtd5Eai"
+    },
+    {
+      "id": "3",
+      "role": "prestataire",
+      "firstname": "presta1",
+      "surname": "presta1",
+      "password": "$2b$10$94kO1uWdRJrMNCozXZII7OE38Yxd7oQFsA.10iq.gZOg35FEzralO"
+    },
+    {
+      "id": "4",
+      "role": "prestataire",
+      "firstname": "presta2",
+      "surname": "presta2",
+      "password": "$2b$10$IAZ6pccUb..oKrKxh8iLVeJMS0JPu9YWIfUlNQl3T5rYPINtd5Eai"
+    }
+  ]
+}}
